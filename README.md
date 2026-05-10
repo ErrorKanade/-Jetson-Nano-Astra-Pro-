@@ -51,11 +51,16 @@ sudo ./scripts/install_init_rules.sh
 CMake
 # 强制指定 3.2 库路径
 set(FORCE_OPENCV_LIBS
+
   "/usr/lib/aarch64-linux-gnu/libopencv_core.so.3.2"
+  
   "/usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.3.2"
+  
   "/usr/lib/aarch64-linux-gnu/libopencv_imgcodecs.so.3.2"
+  
 )
 target_link_libraries(${PROJECT_NAME}_node ${FORCE_OPENCV_LIBS} ${catkin_LIBRARIES})
+
 第四步：编译与环境刷新
 清理旧缓存：rm -rf ~/ros_ws/build ~/ros_ws/devel
 
@@ -84,5 +89,5 @@ Fixed Frame：改为 camera_link。
 
 点云图：Add -> PointCloud2 -> Topic 选 /camera/depth/points。
 
-🌟 结语
-你已经完成了最难的一步：环境对齐。后续在 Jetson 上开发时，请记住：先看 lsusb 有没有硬件，再看 rostopic list 有没有话题，最后再开 rviz 看图像。 祝你的机器人开发之路顺利！
+结语
+学习路上真的很不容易，请你务必坚持学习
